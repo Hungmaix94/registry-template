@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/registry/default-style/ui/card"
 
@@ -16,6 +17,21 @@ interface MapProps extends React.HTMLAttributes<HTMLDivElement> {
   zoom?: number;
   routeCoordinates?: { latitude: number; longitude: number }[]; // For route-area variant
 }
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function MapComponent({
   sectionTitle,
@@ -50,36 +66,47 @@ export default function MapComponent({
   };
 
   return (
-    <section className={cn("w-full py-12 md:py-24 lg:py-32", className)} {...props}>
+    <motion.section
+      className={cn("w-full py-12 md:py-24 lg:py-32", className)}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      {...props}
+    >
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
+        <motion.div
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-8"
+          variants={itemVariants}
+        >
           <div className="space-y-2">
             {sectionTitle && <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{sectionTitle}</h2>}
             {sectionDescription && <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">{sectionDescription}</p>}
           </div>
-        </div>
+        </motion.div>
 
-        <Card>
-          {locations.length > 0 && locations[0].name && (
-            <CardHeader>
-              <CardTitle>{locations[0].name}</CardTitle>
-              {locations[0].address && <p className="text-sm text-muted-foreground">{locations[0].address}</p>}
-            </CardHeader>
-          )}
-          <CardContent className="p-0">
-            <iframe
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              src={getMapEmbedUrl()}
-              title="Map Location"
-            ></iframe>
-          </CardContent>
-        </Card>
+        <motion.div variants={itemVariants}>
+          <Card>
+            {locations.length > 0 && locations[0].name && (
+              <CardHeader>
+                <CardTitle>{locations[0].name}</CardTitle>
+                {locations[0].address && <p className="text-sm text-muted-foreground">{locations[0].address}</p>}
+              </CardHeader>
+            )}
+            <CardContent className="p-0">
+              <iframe
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src={getMapEmbedUrl()}
+                title="Map Location"
+              ></iframe>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

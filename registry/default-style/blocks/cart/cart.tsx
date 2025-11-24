@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/default-style/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/registry/default-style/ui/card"
@@ -19,6 +20,21 @@ interface CartProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "summary" | "full" | "empty";
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export default function Cart({ sectionTitle, cartItems, variant = "full", className, ...props }: CartProps) {
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const shipping = 5.00; // Example fixed shipping
@@ -28,7 +44,13 @@ export default function Cart({ sectionTitle, cartItems, variant = "full", classN
 
   if (variant === "empty" || cartItems.length === 0) {
     return (
-      <section className={cn("w-full py-12 md:py-24 lg:py-32", className)} {...props}>
+      <motion.section
+        className={cn("w-full py-12 md:py-24 lg:py-32", className)}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        {...props}
+      >
         <div className="container px-4 md:px-6 text-center">
           <Card className="max-w-md mx-auto p-8 flex flex-col items-center gap-4">
             <ShoppingCartIcon className="h-16 w-16 text-muted-foreground" />
@@ -41,44 +63,59 @@ export default function Cart({ sectionTitle, cartItems, variant = "full", classN
             </Link>
           </Card>
         </div>
-      </section>
+      </motion.section>
     );
   }
 
   return (
-    <section className={cn("w-full py-12 md:py-24 lg:py-32", className)} {...props}>
+    <motion.section
+      className={cn("w-full py-12 md:py-24 lg:py-32", className)}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      {...props}
+    >
       <div className="container px-4 md:px-6">
         {sectionTitle && (
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
+          <motion.div
+            className="flex flex-col items-center justify-center space-y-4 text-center mb-8"
+            variants={itemVariants}
+          >
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{sectionTitle}</h2>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {variant === "summary" && (
-          <Card className="max-w-xl mx-auto p-4 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <ShoppingCartIcon className="h-6 w-6" />
-              <span className="text-lg font-semibold">{cartItems.length} items</span>
-            </div>
-            <div className="text-lg font-semibold">${total.toFixed(2)}</div>
-            <Link href="/cart">
-              <Button size="sm">View Cart</Button>
-            </Link>
-          </Card>
+          <motion.div variants={itemVariants}>
+            <Card className="max-w-xl mx-auto p-4 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <ShoppingCartIcon className="h-6 w-6" />
+                <span className="text-lg font-semibold">{cartItems.length} items</span>
+              </div>
+              <div className="text-lg font-semibold">${total.toFixed(2)}</div>
+              <Link href="/cart">
+                <Button size="sm">View Cart</Button>
+              </Link>
+            </Card>
+          </motion.div>
         )}
 
         {variant === "full" && (
           <div className="grid gap-8 lg:grid-cols-3">
-            <div className="lg:col-span-2">
+            <motion.div className="lg:col-span-2" variants={containerVariants}>
               <Card>
                 <CardHeader>
                   <CardTitle>Shopping Cart</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {cartItems.map((item) => (
-                    <div key={item.id} className="flex items-center gap-4 border-b pb-4 last:border-b-0 last:pb-0">
+                    <motion.div
+                      key={item.id}
+                      className="flex items-center gap-4 border-b pb-4 last:border-b-0 last:pb-0"
+                      variants={itemVariants}
+                    >
                       <Image
                         src={item.imageUrl}
                         alt={item.name}
@@ -100,12 +137,12 @@ export default function Cart({ sectionTitle, cartItems, variant = "full", classN
                         />
                         <span className="font-semibold">${(item.price * item.quantity).toFixed(2)}</span>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </CardContent>
               </Card>
-            </div>
-            <div className="lg:col-span-1">
+            </motion.div>
+            <motion.div className="lg:col-span-1" variants={itemVariants}>
               <Card>
                 <CardHeader>
                   <CardTitle>Order Summary</CardTitle>
@@ -133,11 +170,11 @@ export default function Cart({ sectionTitle, cartItems, variant = "full", classN
                   </Link>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

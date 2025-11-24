@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/default-style/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/registry/default-style/ui/card"
@@ -19,84 +20,112 @@ interface BundlesProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "list" | "grid" | "featured"; // Define 3 variations
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export default function Bundles({ sectionTitle, bundles, variant = "grid", className, ...props }: BundlesProps) {
   return (
-    <section className={cn("w-full py-12 md:py-24 lg:py-32", className)} {...props}>
+    <motion.section
+      className={cn("w-full py-12 md:py-24 lg:py-32", className)}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      {...props}
+    >
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
+        <motion.div
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-8"
+          variants={itemVariants}
+        >
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{sectionTitle}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Explore our curated collections designed to offer great value.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {variant === "list" && (
-          <div className="flex flex-col gap-6 max-w-2xl mx-auto">
+          <motion.div className="flex flex-col gap-6 max-w-2xl mx-auto" variants={containerVariants}>
             {bundles.map((bundle, index) => (
-              <Card key={index} className="flex flex-col md:flex-row items-center justify-between p-4 gap-4">
-                <div className="text-left">
-                  <CardTitle>{bundle.name}</CardTitle>
-                  <CardDescription className="mt-1">{bundle.description}</CardDescription>
-                  <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
-                    {bundle.items.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-col items-end gap-2">
-                  <span className="text-2xl font-bold">{bundle.price}</span>
-                  {bundle.href && (
-                    <Link href={bundle.href}>
-                      <Button>View Bundle</Button>
-                    </Link>
-                  )}
-                </div>
-              </Card>
-            ))}
-          </div>
-        )}
-
-        {variant === "grid" && (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {bundles.map((bundle, index) => (
-              <Card key={index} className="flex flex-col">
-                {bundle.imageUrl && (
-                  <Image
-                    src={bundle.imageUrl}
-                    alt={bundle.name}
-                    width={400}
-                    height={250}
-                    className="rounded-t-lg object-cover w-full aspect-[3/2]"
-                  />
-                )}
-                <CardHeader className="flex-grow">
-                  <CardTitle>{bundle.name}</CardTitle>
-                  <CardDescription className="mt-1">{bundle.description}</CardDescription>
-                  <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
-                    {bundle.items.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between mt-4">
-                    <span className="text-xl font-bold">{bundle.price}</span>
+              <motion.div key={index} variants={itemVariants}>
+                <Card className="flex flex-col md:flex-row items-center justify-between p-4 gap-4">
+                  <div className="text-left">
+                    <CardTitle>{bundle.name}</CardTitle>
+                    <CardDescription className="mt-1">{bundle.description}</CardDescription>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
+                      {bundle.items.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex flex-col items-end gap-2">
+                    <span className="text-2xl font-bold">{bundle.price}</span>
                     {bundle.href && (
                       <Link href={bundle.href}>
                         <Button>View Bundle</Button>
                       </Link>
                     )}
                   </div>
-                </CardContent>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
+        )}
+
+        {variant === "grid" && (
+          <motion.div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" variants={containerVariants}>
+            {bundles.map((bundle, index) => (
+              <motion.div key={index} variants={itemVariants}>
+                <Card className="flex flex-col h-full">
+                  {bundle.imageUrl && (
+                    <Image
+                      src={bundle.imageUrl}
+                      alt={bundle.name}
+                      width={400}
+                      height={250}
+                      className="rounded-t-lg object-cover w-full aspect-[3/2]"
+                    />
+                  )}
+                  <CardHeader className="flex-grow">
+                    <CardTitle>{bundle.name}</CardTitle>
+                    <CardDescription className="mt-1">{bundle.description}</CardDescription>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
+                      {bundle.items.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between mt-4">
+                      <span className="text-xl font-bold">{bundle.price}</span>
+                      {bundle.href && (
+                        <Link href={bundle.href}>
+                          <Button>View Bundle</Button>
+                        </Link>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
         )}
 
         {variant === "featured" && bundles.length > 0 && (
-          <div className="max-w-4xl mx-auto">
+          <motion.div className="max-w-4xl mx-auto" variants={itemVariants}>
             <Card className="flex flex-col md:flex-row gap-6 p-6">
               {bundles[0].imageUrl && (
                 <Image
@@ -125,9 +154,9 @@ export default function Bundles({ sectionTitle, bundles, variant = "grid", class
                 </div>
               </div>
             </Card>
-          </div>
+          </motion.div>
         )}
       </div>
-    </section>
+    </motion.section>
   )
 }

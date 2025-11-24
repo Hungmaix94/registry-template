@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -19,30 +20,57 @@ interface BenefitsTrustProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "icon-list" | "trust-badges" | "detailed-benefit"
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 // Sub-component for the 'icon-list' variant
 const IconListBenefit = ({ items }: { items: readonly BenefitTrustItem[] }) => (
-  <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-5xl md:grid-cols-3">
+  <motion.div
+    className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-5xl md:grid-cols-3"
+    variants={containerVariants}
+    initial="hidden"
+    animate="visible"
+  >
     {items.map((item, index) => (
-      <Card key={index} className="flex flex-col items-center text-center p-6">
-        {item.icon && (
-          <CardHeader className="p-0 mb-4">
-            <item.icon className="h-12 w-12 text-primary" />
-          </CardHeader>
-        )}
-        <CardContent className="flex flex-col gap-2 p-0">
-          <CardTitle className="text-xl">{item.title}</CardTitle>
-          <p className="text-muted-foreground">{item.description}</p>
-        </CardContent>
-      </Card>
+      <motion.div key={index} variants={itemVariants}>
+        <Card className="flex flex-col items-center text-center p-6 h-full">
+          {item.icon && (
+            <CardHeader className="p-0 mb-4">
+              <item.icon className="h-12 w-12 text-primary" />
+            </CardHeader>
+          )}
+          <CardContent className="flex flex-col gap-2 p-0">
+            <CardTitle className="text-xl">{item.title}</CardTitle>
+            <p className="text-muted-foreground">{item.description}</p>
+          </CardContent>
+        </Card>
+      </motion.div>
     ))}
-  </div>
+  </motion.div>
 )
 
 // Sub-component for the 'trust-badges' variant
 const TrustBadges = ({ items }: { items: readonly BenefitTrustItem[] }) => (
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-center">
+  <motion.div
+    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-center"
+    variants={containerVariants}
+    initial="hidden"
+    animate="visible"
+  >
     {items.map((item, index) => (
-      <div key={index} className="flex flex-col items-center text-center p-4">
+      <motion.div key={index} variants={itemVariants} className="flex flex-col items-center text-center p-4">
         {item.imageUrl && (
           <Image
             src={item.imageUrl}
@@ -53,14 +81,19 @@ const TrustBadges = ({ items }: { items: readonly BenefitTrustItem[] }) => (
           />
         )}
         <p className="text-sm text-muted-foreground mt-2">{item.title}</p>
-      </div>
+      </motion.div>
     ))}
-  </div>
+  </motion.div>
 )
 
 // Sub-component for the 'detailed-benefit' variant
 const DetailedBenefit = ({ item }: { item: BenefitTrustItem }) => (
-  <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+  <motion.div
+    className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
     <div className="space-y-4">
       <h3 className="text-3xl font-bold">{item.title}</h3>
       <p className="text-lg text-muted-foreground">{item.description}</p>
@@ -78,7 +111,7 @@ const DetailedBenefit = ({ item }: { item: BenefitTrustItem }) => (
         item.icon && <item.icon className="h-24 w-24 text-primary" />
       )}
     </div>
-  </div>
+  </motion.div>
 )
 
 export default function BenefitsTrust({
@@ -110,13 +143,19 @@ export default function BenefitsTrust({
   }
 
   return (
-    <section
+    <motion.section
       className={cn("w-full py-12 md:py-24 lg:py-32", className)}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
       {...props}
     >
       <div className="container px-4 md:px-6">
         {(sectionTitle || sectionDescription) && (
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <motion.div
+            className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+            variants={itemVariants}
+          >
             <div className="space-y-2">
               {sectionTitle && (
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -129,11 +168,11 @@ export default function BenefitsTrust({
                 </p>
               )}
             </div>
-          </div>
+          </motion.div>
         )}
 
         {renderContent()}
       </div>
-    </section>
+    </motion.section>
   )
 }
