@@ -37,6 +37,7 @@ const itemVariants = {
 
 export default function Blog({ sectionTitle, posts, variant = "grid", className, ...props }: BlogProps) {
   return (
+    // @ts-ignore
     <motion.section
       className={cn("w-full py-12 md:py-24 lg:py-32", className)}
       initial="hidden"

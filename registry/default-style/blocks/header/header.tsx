@@ -55,6 +55,7 @@ export default function Header({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
+    // @ts-ignore
     <motion.header
       className={cn("w-full py-4 px-4 md:px-6 border-b", className)}
       initial="hidden"

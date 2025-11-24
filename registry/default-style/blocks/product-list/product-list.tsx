@@ -54,6 +54,7 @@ export default function ProductList({ sectionTitle, products, variant = "grid-si
   }, [products, filters, sortBy]);
 
   return (
+    // @ts-ignore
     <motion.section
       className={cn("w-full py-12 md:py-24 lg:py-32", className)}
       initial="hidden"

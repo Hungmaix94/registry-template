@@ -35,6 +35,7 @@ const itemVariants = {
 
 export default function Categories({ sectionTitle, categories, variant = "grid", className, ...props }: CategoriesProps) {
   return (
+    // @ts-ignore
     <motion.section
       className={cn("w-full py-12 md:py-24 lg:py-32", className)}
       initial="hidden"

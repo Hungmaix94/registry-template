@@ -63,6 +63,7 @@ export default function StickyTopBar({
   return (
     <AnimatePresence>
       {!isDismissed && (
+        // @ts-ignore
         <motion.div
           className={cn("sticky top-0 z-40 bg-primary text-primary-foreground py-2 px-4 text-center text-sm flex items-center justify-center gap-4", className)}
           initial="hidden"

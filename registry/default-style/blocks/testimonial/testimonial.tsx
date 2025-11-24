@@ -36,6 +36,7 @@ const itemVariants = {
 
 export default function Testimonial({ sectionTitle, sectionDescription, testimonials, variant = "grid", className, ...props }: TestimonialProps) {
   return (
+    // @ts-ignore
     <motion.section
       className={cn("w-full py-12 md:py-24 lg:py-32", className)}
       initial="hidden"

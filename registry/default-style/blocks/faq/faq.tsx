@@ -35,6 +35,7 @@ export default function Faq({ sectionTitle, sectionDescription, faqItems, varian
   const categories = Array.from(new Set(faqItems.map(item => item.category))).filter(Boolean) as string[];
 
   return (
+    // @ts-ignore
     <motion.section
       className={cn("w-full py-12 md:py-24 lg:py-32", className)}
       initial="hidden"

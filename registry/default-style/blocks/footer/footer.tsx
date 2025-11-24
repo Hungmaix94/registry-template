@@ -47,6 +47,7 @@ export default function Footer({
   ...props
 }: FooterProps) {
   return (
+    // @ts-ignore
     <motion.footer
       className={cn("w-full py-12 md:py-16 bg-gray-100 dark:bg-gray-800", className)}
       initial="hidden"

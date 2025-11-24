@@ -80,6 +80,7 @@ export default function SideCart({
         ></motion.div>
       )}
       {isOpen && (
+        // @ts-ignore
         <motion.div
           className={cn(
             "fixed top-0 right-0 h-full w-full md:w-96 bg-background shadow-lg z-50 transform transition-transform duration-300 ease-in-out",

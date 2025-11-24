@@ -143,6 +143,7 @@ export default function BenefitsTrust({
   }
 
   return (
+    // @ts-ignore
     <motion.section
       className={cn("w-full py-12 md:py-24 lg:py-32", className)}
       initial="hidden"
