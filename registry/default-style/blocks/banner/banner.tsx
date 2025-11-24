@@ -84,7 +84,7 @@ export default function Banner({
           {description && <motion.p className="text-sm md:text-base max-w-prose" variants={itemVariants}>{description}</motion.p>}
         </motion.div>
         {cta && (
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href={cta.href} className={cn(buttonVariants({ variant: "secondary" }))}>
               {cta.text}
             </Link>
