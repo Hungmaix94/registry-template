@@ -1,7 +1,7 @@
 "use client"
 import {OpenInV0Button} from "@/components/open-in-v0-button";
 import {ReactNode, useState} from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { RefreshCw } from "lucide-react";
 import { Button } from "@/registry/default-style/ui/button";
 import {cn} from "@/lib/utils";
@@ -13,13 +13,15 @@ type Props = {
     className?:string
 }
 const Wrapper = ({title, name, children,className}: Props) => {
+    const [reloadKey, setReloadKey] = useState(0);
     const [isReloading, setIsReloading] = useState(false);
 
     const handleReload = () => {
         setIsReloading(true);
+        setReloadKey(prevKey => prevKey + 1);
         setTimeout(() => {
             setIsReloading(false);
-        }, 1000);
+        }, 500); // Shorter duration for quicker visual feedback
     };
 
     const containerVariants = {
@@ -33,6 +35,12 @@ const Wrapper = ({title, name, children,className}: Props) => {
                 staggerChildren: 0.2,
             },
         },
+    };
+
+    const childVariants = {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -20 },
     };
 
     return (
@@ -60,7 +68,18 @@ const Wrapper = ({title, name, children,className}: Props) => {
                     </motion.div>
                 </div>
             </div>
-            {children}
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={reloadKey}
+                    variants={childVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{ duration: 0.3 }}
+                >
+                    {children}
+                </motion.div>
+            </AnimatePresence>
         </motion.div>
     )
 }
