@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sticky-top-bar",
+  "type": "registry:component",
+  "title": "Sticky Top Bar",
+  "description": "A top bar for announcements, promotions, or quick actions.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default-style/blocks/sticky-top-bar/sticky-top-bar.tsx",
+      "content": "import Link from \"next/link\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\nimport { X, Clock } from \"lucide-react\"\nimport * as React from \"react\"\n\ninterface StickyTopBarProps extends React.HTMLAttributes<HTMLDivElement> {\n  message: string;\n  cta?: {\n    text: string;\n    href: string;\n  };\n  variant?: \"announcement\" | \"promotional\" | \"dismissible-timer\";\n  countdownSeconds?: number; // For dismissible-timer variant\n  isInitiallyDismissed?: boolean;\n}\n\nexport default function StickyTopBar({\n  message,\n  cta,\n  variant = \"announcement\",\n  countdownSeconds = 60,\n  isInitiallyDismissed = false,\n  className,\n  ...props\n}: StickyTopBarProps) {\n  const [isDismissed, setIsDismissed] = React.useState(isInitiallyDismissed);\n  const [timeLeft, setTimeLeft] = React.useState(countdownSeconds);\n\n  React.useEffect(() => {\n    if (variant === \"dismissible-timer\" && !isDismissed && timeLeft > 0) {\n      const timer = setTimeout(() => {\n        setTimeLeft(timeLeft - 1);\n      }, 1000);\n      return () => clearTimeout(timer);\n    } else if (timeLeft === 0) {\n      setIsDismissed(true);\n    }\n  }, [timeLeft, isDismissed, variant]);\n\n  if (isDismissed) {\n    return null;\n  }\n\n  const formatTime = (seconds: number) => {\n    const minutes = Math.floor(seconds / 60);\n    const remainingSeconds = seconds % 60;\n    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;\n  };\n\n  return (\n    <div className={cn(\"sticky top-0 z-40 bg-primary text-primary-foreground py-2 px-4 text-center text-sm flex items-center justify-center gap-4\", className)} {...props}>\n      <p className=\"flex-1\">{message}</p>\n      {variant === \"promotional\" && cta && (\n        <Link href={cta.href}>\n          <Button variant=\"secondary\" size=\"sm\" className=\"whitespace-nowrap\">\n            {cta.text}\n          </Button>\n        </Link>\n      )}\n      {variant === \"dismissible-timer\" && (\n        <div className=\"flex items-center gap-2 whitespace-nowrap\">\n          <Clock className=\"h-4 w-4\" />\n          <span>{formatTime(timeLeft)}</span>\n          <Button variant=\"ghost\" size=\"icon\" className=\"h-6 w-6\" onClick={() => setIsDismissed(true)}>\n            <X className=\"h-4 w-4\" />\n            <span className=\"sr-only\">Dismiss</span>\n          </Button>\n        </div>\n      )}\n      {variant !== \"dismissible-timer\" && ( // Allow dismissing other variants too\n        <Button variant=\"ghost\" size=\"icon\" className=\"h-6 w-6\" onClick={() => setIsDismissed(true)}>\n          <X className=\"h-4 w-4\" />\n          <span className=\"sr-only\">Dismiss</span>\n        </Button>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default-style/blocks/sticky-top-bar/mock-data.ts",
+      "content": "export const mockStickyTopBarData = {\n  announcement: {\n    message: \"Free shipping on all orders over $50!\",\n    cta: {\n      text: \"Shop Now\",\n      href: \"/shop\",\n    },\n    variant: \"announcement\",\n    isInitiallyDismissed: false,\n  },\n  promotional: {\n    message: \"Flash Sale: Up to 50% off select items!\",\n    cta: {\n      text: \"View Deals\",\n      href: \"/sale\",\n    },\n    variant: \"promotional\",\n    isInitiallyDismissed: false,\n  },\n  dismissibleTimer: {\n    message: \"Special offer ends in\",\n    countdownSeconds: 120, // 2 minutes\n    variant: \"dismissible-timer\",\n    isInitiallyDismissed: false,\n  },\n};\n",
+      "type": "registry:lib"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+export const mockBlogData = {
+  posts: [
+    {
+      title: "The Future of Web Development",
+      description: "Explore the latest trends and technologies shaping the web development landscape in 2024 and beyond.",
+      imageUrl: "https://via.placeholder.com/600x400/FF5733/ffffff?text=Web+Dev",
+      category: "Technology",
+      date: "October 26, 2024",
+      author: "Jane Doe",
+      href: "/blog/post-1",
+    },
+    {
+      title: "Mastering React Hooks",
+      description: "A comprehensive guide to understanding and effectively using React Hooks in your projects.",
+      imageUrl: "https://via.placeholder.com/600x400/33FF57/ffffff?text=React+Hooks",
+      category: "Programming",
+      date: "October 20, 2024",
+      author: "John Smith",
+      href: "/blog/post-2",
+    },
+    {
+      title: "Building Scalable Microservices",
+      description: "Best practices for designing and implementing microservices architectures that scale.",
+      imageUrl: "https://via.placeholder.com/600x400/3357FF/ffffff?text=Microservices",
+      category: "Architecture",
+      date: "October 15, 2024",
+      author: "Alice Johnson",
+      href: "/blog/post-3",
+    },
+    {
+      title: "Introduction to Serverless Computing",
+      description: "Get started with serverless functions and build powerful, cost-effective applications.",
+      imageUrl: "https://via.placeholder.com/600x400/FFFF33/000000?text=Serverless",
+      category: "Cloud",
+      date: "October 10, 2024",
+      author: "Bob Brown",
+      href: "/blog/post-4",
+    },
+  ],
+  sectionTitle: "Our Latest Blog Posts",
+};

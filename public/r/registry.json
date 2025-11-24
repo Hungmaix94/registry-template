@@ -3,76 +3,392 @@
   "name": "acme",
   "homepage": "https://acme.com",
   "items": [
+
     {
-      "name": "hello-world",
+      "name": "hero-section",
       "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "title": "Hero Section",
+      "description": "A hero section for a landing page.",
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
-          "path": "registry/new-york/blocks/hello-world/hello-world.tsx",
+          "path": "registry/default-style/blocks/hero-section/hero-section.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "example-form",
+      "name": "banner",
       "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "title": "Banner",
+      "description": "A versatile banner component with multiple variations.",
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
-          "path": "registry/new-york/blocks/example-form/example-form.tsx",
+          "path": "registry/default-style/blocks/banner/banner.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "complex-component",
+      "name": "blog",
       "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
+      "title": "Blog Section",
+      "description": "A section to display blog posts in various layouts.",
+      "registryDependencies": [
+        "card"
+      ],
       "files": [
         {
-          "path": "registry/new-york/blocks/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-card.tsx",
+          "path": "registry/default-style/blocks/blog/blog.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/lib/pokemon.ts",
+          "path": "registry/default-style/blocks/blog/mock-data.ts",
           "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
         }
       ]
     },
     {
-      "name": "example-with-css",
+      "name": "bundles",
       "type": "registry:component",
-      "title": "Example with CSS",
-      "description": "A login form with a CSS file.",
+      "title": "Product Bundles",
+      "description": "A section to display product bundles with various layouts.",
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
       "files": [
         {
-          "path": "registry/new-york/blocks/example-with-css/example-card.tsx",
+          "path": "registry/default-style/blocks/bundles/bundles.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/example-with-css/example-card.css",
+          "path": "registry/default-style/blocks/bundles/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "categories",
+      "type": "registry:component",
+      "title": "Product Categories",
+      "description": "A section to display product categories with various layouts.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/categories/categories.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/categories/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "type": "registry:component",
+      "title": "Contact Section",
+      "description": "A section with contact information and a form.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/contact/contact.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/contact/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "type": "registry:component",
+      "title": "Content Section",
+      "description": "A versatile section for displaying various types of content.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/content/content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/content/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "cart",
+      "type": "registry:component",
+      "title": "Shopping Cart Section",
+      "description": "A section to display shopping cart details in various layouts.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/cart/cart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/cart/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "map",
+      "type": "registry:component",
+      "title": "Interactive Map",
+      "description": "A section displaying an interactive map with various configurations.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/map/map.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/map/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "faq",
+      "type": "registry:component",
+      "title": "FAQ Section",
+      "description": "A section to display frequently asked questions.",
+      "registryDependencies": [
+        "accordion",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/faq/faq.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/faq/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "featured",
+      "type": "registry:component",
+      "title": "Featured Section",
+      "description": "A section to display featured items with various layouts.",
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/featured/featured.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/featured/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "header",
+      "type": "registry:component",
+      "title": "Header Section",
+      "description": "A responsive header component with navigation, branding, and optional features.",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/header/header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/header/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "instagram",
+      "type": "registry:component",
+      "title": "Instagram Feed",
+      "description": "A section to display an Instagram-like photo grid or carousel.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/instagram/instagram.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/instagram/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "product-detail",
+      "type": "registry:component",
+      "title": "Product Detail Section",
+      "description": "A section to display detailed information about a product.",
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/product-detail/product-detail.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/product-detail/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "product-list",
+      "type": "registry:component",
+      "title": "Product List Section",
+      "description": "A section to display a list or grid of products with various layouts.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/product-list/product-list.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/product-list/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "side-cart",
+      "type": "registry:component",
+      "title": "Side Cart",
+      "description": "A sliding side panel to display shopping cart contents.",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/side-cart/side-cart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/side-cart/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "sticky-top-bar",
+      "type": "registry:component",
+      "title": "Sticky Top Bar",
+      "description": "A top bar for announcements, promotions, or quick actions.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/sticky-top-bar/sticky-top-bar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/sticky-top-bar/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "subscribe-newsletter",
+      "type": "registry:component",
+      "title": "Subscribe Newsletter",
+      "description": "A section for newsletter subscription.",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/subscribe-newsletter/subscribe-newsletter.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/subscribe-newsletter/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "testimonial",
+      "type": "registry:component",
+      "title": "Testimonial Section",
+      "description": "A section to display customer testimonials in various layouts.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/testimonial/testimonial.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/testimonial/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "benefits-trust",
+      "type": "registry:component",
+      "title": "Benefits & Trust Section",
+      "description": "A section to display key benefits or trust signals with various layouts.",
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/benefits-trust/benefits-trust.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/benefits-trust/mock-data.ts",
+          "type": "registry:lib"
         }
       ]
     }
