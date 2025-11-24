@@ -1,10 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { OpenInV0Button } from "@/components/open-in-v0-button"
 import { Button } from "@/registry/default-style/ui/button" // Added import
 import Footer from "@/registry/default-style/blocks/footer/footer" // Added import
 import { mockFooterData } from "@/registry/default-style/blocks/footer/mock-data" // Added import
+import Wrapper from "@/components/Wrapper";
 
 // Import components and their mock data from the registry
 
@@ -87,140 +87,54 @@ export default function Home() {
           </p>
         </header>
 
+        <Wrapper title="Hero Section (Default Variant)" name="hero-section">
+            <HeroSection {...mockHeroSectionData.default} />
+        </Wrapper>
 
-
-        {/* Hero Section */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Hero Section (Default Variant)</h2>
-            <OpenInV0Button name="hero-section" className="w-fit" />
-          </div>
-          <HeroSection {...mockHeroSectionData.default} />
-        </div>
-
-        {/* Banner */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Banner (Default Variant)</h2>
-            <OpenInV0Button name="banner" className="w-fit" />
-          </div>
+        <Wrapper title="Banner (Default Variant)" name="banner">
           <Banner {...mockBannerData.default} />
-        </div>
+        </Wrapper>
 
-        {/* Blog */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Blog (Grid Layout)</h2>
-            <OpenInV0Button name="blog" className="w-fit" />
-          </div>
+        <Wrapper title="Blog (Grid Layout)" name="blog">
           <Blog {...mockBlogData} variant="grid" />
-        </div>
+        </Wrapper>
 
-        {/* Bundles */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Bundles (Grid Layout)</h2>
-            <OpenInV0Button name="bundles" className="w-fit" />
-          </div>
-          <Bundles {...mockBundlesData} variant="grid" />
-        </div>
+        <Wrapper title="Bundles (Grid Layout)" name="bundles">
+            <Bundles {...mockBundlesData} variant="grid" />
+        </Wrapper>
 
-        {/* Categories */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Categories (Grid Layout)</h2>
-            <OpenInV0Button name="categories" className="w-fit" />
-          </div>
-          <Categories {...mockCategoriesData} variant="grid" />
-        </div>
+        <Wrapper title="Categories (Grid Layout)" name="categories">
+            <Categories {...mockCategoriesData} variant="grid" />
+        </Wrapper>
+        <Wrapper title="Contact (Basic Form)" name="contact">
+            <Contact {...mockContactData} variant="basic-form" />
+        </Wrapper>
+        <Wrapper title="Content (Text Only)" name="content">
+            <Content {...mockContentData.textOnly} />
+        </Wrapper>
+        <Wrapper title="Cart (Full View)" name="cart">
+            <Cart {...mockCartData.fullCart} />
+        </Wrapper>
+        <Wrapper title="Map (Single Marker)" name="map">
+            <MapComponent {...mockMapData.singleMarker} />
+        </Wrapper>
+        <Wrapper title="FAQ (Accordion)" name="faq">
+            <Faq {...mockFaqData.accordionFaq} />
+        </Wrapper>
+        <Wrapper title="Featured (Grid Layout)" name="featured">
+            <Featured {...mockFeaturedData.gridFeatured} />
+        </Wrapper>
+        <Wrapper title="Instagram (Simple Grid)" name="instagram">
+            <Instagram {...mockInstagramData} variant="grid-simple" />
+        </Wrapper>
+        <Wrapper title="Product Detail (Standard)" name="product-detail">
+            <ProductDetail {...mockProductDetailData.standardProduct} />
+        </Wrapper>
+        <Wrapper title="Product List (Simple Grid)" name="product-list">
+            <ProductList {...mockProductListData} variant="grid-simple" />
+        </Wrapper>
 
-        {/* Contact */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Contact (Basic Form)</h2>
-            <OpenInV0Button name="contact" className="w-fit" />
-          </div>
-          <Contact {...mockContactData} variant="basic-form" />
-        </div>
-
-        {/* Content */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Content (Text Only)</h2>
-            <OpenInV0Button name="content" className="w-fit" />
-          </div>
-          <Content {...mockContentData.textOnly} />
-        </div>
-        
-        {/* Cart */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Cart (Full View)</h2>
-            <OpenInV0Button name="cart" className="w-fit" />
-          </div>
-          <Cart {...mockCartData.fullCart} />
-        </div>
-
-        {/* Map */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Map (Single Marker)</h2>
-            <OpenInV0Button name="map" className="w-fit" />
-          </div>
-          <MapComponent {...mockMapData.singleMarker} />
-        </div>
-
-        {/* FAQ */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">FAQ (Accordion)</h2>
-            <OpenInV0Button name="faq" className="w-fit" />
-          </div>
-          <Faq {...mockFaqData.accordionFaq} />
-        </div>
-
-        {/* Featured */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Featured (Grid Layout)</h2>
-            <OpenInV0Button name="featured" className="w-fit" />
-          </div>
-          <Featured {...mockFeaturedData.gridFeatured} />
-        </div>
-
-        {/* Instagram */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Instagram (Simple Grid)</h2>
-            <OpenInV0Button name="instagram" className="w-fit" />
-          </div>
-          <Instagram {...mockInstagramData} variant="grid-simple" />
-        </div>
-        
-        {/* Product Detail */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Product Detail (Standard)</h2>
-            <OpenInV0Button name="product-detail" className="w-fit" />
-          </div>
-          <ProductDetail {...mockProductDetailData.standardProduct} />
-        </div>
-
-        {/* Product List */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Product List (Simple Grid)</h2>
-            <OpenInV0Button name="product-list" className="w-fit" />
-          </div>
-          <ProductList {...mockProductListData} variant="grid-simple" />
-        </div>
-
-        {/* Side Cart (needs a toggle button) */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Side Cart (Detailed Controls)</h2>
-            <OpenInV0Button name="side-cart" className="w-fit" />
-          </div>
+        <Wrapper title="Side Cart (Detailed Controls)" name="side-cart" className="min-h-[450px]">
           <div className="flex items-center justify-center min-h-[400px] relative">
             <Button onClick={() => setIsSideCartOpen(true)}>Open Side Cart</Button>
             <SideCart
@@ -229,44 +143,23 @@ export default function Home() {
               onClose={() => setIsSideCartOpen(false)}
             />
           </div>
-        </div>
+        </Wrapper>
 
-        {/* Sticky Top Bar (needs to be at top, placed here for demo) */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Sticky Top Bar (Announcement)</h2>
-            <OpenInV0Button name="sticky-top-bar" className="w-fit" />
-          </div>
+        <Wrapper title="Sticky Top Bar (Announcement)" name="sticky-top-bar">
           {/* Rendered outside main for proper sticking, but put here for demo context */}
           <StickyTopBar {...mockStickyTopBarData.announcement} />
-        </div>
+        </Wrapper>
 
-        {/* Subscribe Newsletter */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Subscribe Newsletter (Prominent Section)</h2>
-            <OpenInV0Button name="subscribe-newsletter" className="w-fit" />
-          </div>
+        <Wrapper title="Subscribe Newsletter (Prominent Section)" name="subscribe-newsletter">
           <SubscribeNewsletter {...mockSubscribeNewsletterData.prominentSection} />
-        </div>
-        
-        {/* Testimonial */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Testimonial (Grid Layout)</h2>
-            <OpenInV0Button name="testimonial" className="w-fit" />
-          </div>
-          <Testimonial {...mockTestimonialData} variant="grid" />
-        </div>
+        </Wrapper>
 
-        {/* Benefits & Trust */}
-        <div className="flex flex-col gap-4 border rounded-lg p-4 relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">Benefits & Trust (Icon List)</h2>
-            <OpenInV0Button name="benefits-trust" className="w-fit" />
-          </div>
+        <Wrapper title="Testimonial (Grid Layout)" name="testimonial">
+          <Testimonial {...mockTestimonialData} variant="grid" />
+        </Wrapper>
+        <Wrapper title="Benefits & Trust (Icon List)" name="benefits-trust">
           <BenefitsTrust {...mockBenefitsTrustData.iconList} />
-        </div>
+        </Wrapper>
 
       </main>
 
