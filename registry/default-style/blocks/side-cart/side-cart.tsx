@@ -160,7 +160,7 @@ export default function SideCart({
                   </motion.div>
                 )}
 
-                <motion.div className="space-y-1 text-sm" variants={containerVariants}>
+                <motion.div className="space-y-1 text-sm" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ staggerChildren: 0.1 }}>
                   <motion.div className="flex items-center justify-between" variants={itemVariants}>
                     <span>Subtotal</span>
                     <span>${subtotal.toFixed(2)}</span>
@@ -185,7 +185,7 @@ export default function SideCart({
                   </motion.div>
                 </motion.div>
 
-                <motion.div className="flex flex-col gap-2" variants={containerVariants}>
+                <motion.div className="flex flex-col gap-2" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ staggerChildren: 0.1 }}>
                   <motion.div variants={itemVariants}>
                     <Button size="lg" className="w-full">Proceed to Checkout</Button>
                   </motion.div>
