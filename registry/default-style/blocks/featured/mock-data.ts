@@ -6,7 +6,7 @@ export const mockFeaturedData = {
       {
         title: "AI-Powered Smart Assistant",
         description: "Your ultimate companion for daily tasks and smart home management. Experience seamless integration and intuitive control.",
-        imageUrl: "https://via.placeholder.com/600x400/4CAF50/ffffff?text=Smart+Assistant",
+        imageUrl: "/original-39b4ace881145b6de383a834d863497f.webp",
         cta: {
           text: "View Details",
           href: "/products/smart-assistant",
@@ -22,7 +22,7 @@ export const mockFeaturedData = {
       {
         title: "Eco-Friendly Water Bottle",
         description: "Stay hydrated with our sustainable and stylish water bottle, made from recycled materials.",
-        imageUrl: "https://via.placeholder.com/400x250/2196F3/ffffff?text=Eco+Bottle",
+        imageUrl: "/original-4341d22a14c3595f93dfe806ae016ca1.webp",
         cta: {
           text: "Shop Now",
           href: "/products/eco-bottle",
@@ -31,7 +31,7 @@ export const mockFeaturedData = {
       {
         title: "Ergonomic Office Chair",
         description: "Enhance your productivity and comfort with our scientifically designed ergonomic chair.",
-        imageUrl: "https://via.placeholder.com/400x250/FFC107/000000?text=Office+Chair",
+        imageUrl: "/original-6c650872ac16599ac700fd65b080c3e9.webp",
         cta: {
           text: "Learn More",
           href: "/products/office-chair",
@@ -40,7 +40,7 @@ export const mockFeaturedData = {
       {
         title: "Wireless Noise-Cancelling Headphones",
         description: "Immerse yourself in pure sound with our advanced noise-cancelling technology.",
-        imageUrl: "https://via.placeholder.com/400x250/9C27B0/ffffff?text=Headphones",
+        imageUrl: "/original-eeb115fedc8765420d9f730b945f4ee8.webp",
         cta: {
           text: "Buy Now",
           href: "/products/headphones",
@@ -56,7 +56,7 @@ export const mockFeaturedData = {
       {
         title: "Smart Home Hub",
         description: "Control all your smart devices from one central hub. Simple, intuitive, powerful.",
-        imageUrl: "https://via.placeholder.com/320x200/FF9800/ffffff?text=Smart+Hub",
+        imageUrl: "/a1ee0df814ea30f4d3622c301f4baebc.webp",
         cta: {
           text: "Discover",
           href: "/products/smart-hub",
@@ -65,7 +65,7 @@ export const mockFeaturedData = {
       {
         title: "Fitness Tracker Pro",
         description: "Monitor your health and fitness goals with precision. Your personal health coach.",
-        imageUrl: "https://via.placeholder.com/320x200/8BC34A/ffffff?text=Fitness+Tracker",
+        imageUrl: "/d2a4defbf6a952b7d33139d519809179.webp",
         cta: {
           text: "Shop Tracker",
           href: "/products/fitness-tracker",
@@ -74,7 +74,7 @@ export const mockFeaturedData = {
       {
         title: "Portable Projector",
         description: " cinematic experience anywhere you go. Big screen fun in a small package.",
-        imageUrl: "https://via.placeholder.com/320x200/795548/ffffff?text=Projector",
+        imageUrl: "/d3bb8de0676c2532b41a43d453662511.webp",
         cta: {
           text: "Get Projector",
           href: "/products/projector",

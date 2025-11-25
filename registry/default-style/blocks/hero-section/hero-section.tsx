@@ -9,6 +9,7 @@ interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   description: string;
   imageUrl?: string;
   imageAlt?: string;
+  backgroundUrl?: string;
   ctaPrimary?: {
     text: string;
     href: string;
@@ -41,6 +42,7 @@ export default function HeroSection({
   description,
   imageUrl,
   imageAlt = "Hero image",
+  backgroundUrl,
   ctaPrimary,
   ctaSecondary,
   variant = "default",
@@ -48,15 +50,25 @@ export default function HeroSection({
   className,
   ...props
 }: HeroSectionProps) {
+  const withBackground = (variant === 'default' || variant === 'centered-image') && backgroundUrl;
   return (
     // @ts-ignore
     <motion.section
-      className={cn("w-full py-12 md:py-24 lg:py-32", className)}
+      className={cn("relative w-full py-12 md:py-24 lg:py-32", withBackground && "isolate", className)}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
       {...props}
     >
+      {withBackground && (
+        <Image
+          alt={imageAlt || "Background"}
+          src={backgroundUrl!}
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+      )}
       <div className="container px-4 md:px-6">
         {variant === "default" && (
           <motion.div

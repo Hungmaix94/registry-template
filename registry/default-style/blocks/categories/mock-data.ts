@@ -3,28 +3,28 @@ export const mockCategoriesData = {
     {
       name: "Electronics",
       description: "Discover the latest gadgets and technology.",
-      imageUrl: "https://via.placeholder.com/120/007bff/ffffff?text=Electronics",
+      imageUrl: "/a1ee0df814ea30f4d3622c301f4baebc.webp",
       iconUrl: "/globe.svg", // Using existing icon
       href: "/categories/electronics",
     },
     {
       name: "Apparel",
       description: "Fashion for every season and style.",
-      imageUrl: "https://via.placeholder.com/120/28a745/ffffff?text=Apparel",
+      imageUrl: "/d2a4defbf6a952b7d33139d519809179.webp",
       iconUrl: "/file.svg", // Using existing icon
       href: "/categories/apparel",
     },
     {
       name: "Home Goods",
       description: "Decorate your space with our unique home essentials.",
-      imageUrl: "https://via.placeholder.com/120/ffc107/000000?text=Home+Goods",
+      imageUrl: "/d3bb8de0676c2532b41a43d453662511.webp",
       iconUrl: "/window.svg", // Using existing icon
       href: "/categories/home-goods",
     },
     {
       name: "Books & Media",
       description: "Dive into a world of stories and entertainment.",
-      imageUrl: "https://via.placeholder.com/120/17a2b8/ffffff?text=Books",
+      imageUrl: "/087264cf6e1e2f43e72bbd98cb6424cb.webp",
       iconUrl: "/next.svg", // Using existing icon
       href: "/categories/books-media",
     },

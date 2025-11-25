@@ -2,7 +2,8 @@ export const mockHeroSectionData = {
   default: {
     title: "Build & Ship Faster",
     description: "A collection of beautifully designed, production-ready components and landing pages built with Radix UI and Tailwind CSS.",
-    imageUrl: "/placeholder.svg",
+    imageUrl: "/087264cf6e1e2f43e72bbd98cb6424cb.webp",
+    backgroundUrl: "/background.svg",
     ctaPrimary: {
       text: "Get Started",
       href: "#",
@@ -17,7 +18,8 @@ export const mockHeroSectionData = {
   centeredImage: {
     title: "Unleash Your Creativity",
     description: "Empower your projects with our innovative tools and resources. Turn your ideas into reality with ease and efficiency.",
-    imageUrl: "https://via.placeholder.com/800x400/FF5733/ffffff?text=Creativity",
+    imageUrl: "/95e1a9184f7206476310602550edc7e7.webp",
+    backgroundUrl: "/background1.svg",
     ctaPrimary: {
       text: "Learn More",
       href: "#",
@@ -31,7 +33,8 @@ export const mockHeroSectionData = {
   heroBanner: {
     title: "Your Journey Starts Here",
     description: "Join thousands of satisfied customers and transform your digital presence with our cutting-edge solutions.",
-    imageUrl: "https://via.placeholder.com/1920x1080/007bff/ffffff?text=Hero+Background",
+    imageUrl: "/background.png",
+    backgroundUrl: "/background2.svg",
     ctaPrimary: {
       text: "Explore Services",
       href: "#",

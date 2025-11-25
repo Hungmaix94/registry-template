@@ -3,7 +3,7 @@ export const mockProductListData = {
     {
       id: "p1",
       name: "Smart Speaker Echo",
-      imageUrl: "https://via.placeholder.com/300/4CAF50/ffffff?text=Echo+Speaker",
+      imageUrl: "/087264cf6e1e2f43e72bbd98cb6424cb.webp",
       price: 99.99,
       rating: 4.5,
       reviewCount: 150,
@@ -12,7 +12,7 @@ export const mockProductListData = {
     {
       id: "p2",
       name: "Noise-Cancelling Headphones",
-      imageUrl: "https://via.placeholder.com/300/2196F3/ffffff?text=Headphones",
+      imageUrl: "/95e1a9184f7206476310602550edc7e7.webp",
       price: 199.99,
       rating: 4.8,
       reviewCount: 230,
@@ -21,7 +21,7 @@ export const mockProductListData = {
     {
       id: "p3",
       name: "Portable SSD 1TB",
-      imageUrl: "https://via.placeholder.com/300/FFC107/000000?text=SSD+1TB",
+      imageUrl: "/96d82dcff9d85d9caf3e52fe41410cc0.webp",
       price: 129.00,
       rating: 4.2,
       reviewCount: 85,
@@ -30,7 +30,7 @@ export const mockProductListData = {
     {
       id: "p4",
       name: "Ergonomic Office Chair",
-      imageUrl: "https://via.placeholder.com/300/9C27B0/ffffff?text=Office+Chair",
+      imageUrl: "/a1ee0df814ea30f4d3622c301f4baebc.webp",
       price: 349.50,
       rating: 4.7,
       reviewCount: 190,
@@ -39,7 +39,7 @@ export const mockProductListData = {
     {
       id: "p5",
       name: "4K UHD Monitor 27-inch",
-      imageUrl: "https://via.placeholder.com/300/E91E63/ffffff?text=Monitor+4K",
+      imageUrl: "/d2a4defbf6a952b7d33139d519809179.webp",
       price: 299.00,
       rating: 4.6,
       reviewCount: 110,
@@ -48,7 +48,7 @@ export const mockProductListData = {
     {
       id: "p6",
       name: "Gaming Mouse RGB",
-      imageUrl: "https://via.placeholder.com/300/00BCD4/ffffff?text=Gaming+Mouse",
+      imageUrl: "/d3bb8de0676c2532b41a43d453662511.webp",
       price: 49.99,
       rating: 4.3,
       reviewCount: 200,

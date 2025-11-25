@@ -5,7 +5,7 @@ export const mockBundlesData = {
       description: "Everything you need to kickstart your journey.",
       price: "$49.99",
       items: ["Product A", "Product B", "Service C"],
-      imageUrl: "https://via.placeholder.com/400x250/FF5733/ffffff?text=Starter+Pack",
+      imageUrl: "/087264cf6e1e2f43e72bbd98cb6424cb.webp",
       href: "/bundles/starter",
     },
     {
@@ -13,7 +13,7 @@ export const mockBundlesData = {
       description: "Advanced tools for professional content creation.",
       price: "$129.99",
       items: ["Product D", "Product E", "Software F", "Exclusive Course"],
-      imageUrl: "https://via.placeholder.com/400x250/33FF57/ffffff?text=Pro+Bundle",
+      imageUrl: "/95e1a9184f7206476310602550edc7e7.webp",
       href: "/bundles/pro-creator",
     },
     {
@@ -21,7 +21,7 @@ export const mockBundlesData = {
       description: "Our best offerings combined for an unparalleled experience.",
       price: "$249.99",
       items: ["Product G", "Service H", "Premium Support", "Limited Edition Item"],
-      imageUrl: "https://via.placeholder.com/400x250/3357FF/ffffff?text=Ultimate+Bundle",
+      imageUrl: "/96d82dcff9d85d9caf3e52fe41410cc0.webp",
       href: "/bundles/ultimate",
     },
   ],

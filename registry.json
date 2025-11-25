@@ -334,6 +334,23 @@
           "type": "registry:lib"
         }
       ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:component",
+      "title": "Carousel",
+      "description": "A carousel component with autoplay and navigation.",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/carousel/carousel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/carousel/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
     }
   ]
 }

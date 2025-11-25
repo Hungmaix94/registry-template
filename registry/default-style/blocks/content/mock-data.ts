@@ -14,7 +14,7 @@ export const mockContentData = {
   textWithImage: {
     title: "Innovation at its Best",
     body: "We are constantly pushing the boundaries of technology to bring you the most innovative solutions. Our dedicated team works tirelessly to create products that make a real difference in your life.",
-    imageUrl: "https://via.placeholder.com/600x400/336699/ffffff?text=Innovation",
+    imageUrl: "/a1ee0df814ea30f4d3622c301f4baebc.webp",
     imagePosition: "right" as const,
     cta: {
       text: "Discover Our Products",

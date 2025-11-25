@@ -94,7 +94,11 @@ export default function Content({
             variants={containerVariants}
           >
             {imageUrl && imagePosition === "left" && (
-              <motion.div variants={itemVariants}>
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
                 <Image
                   src={imageUrl}
                   alt={imageAlt}
@@ -113,7 +117,11 @@ export default function Content({
               )}
             </motion.div>
             {imageUrl && imagePosition === "right" && (
-              <motion.div variants={itemVariants}>
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
                 <Image
                   src={imageUrl}
                   alt={imageAlt}

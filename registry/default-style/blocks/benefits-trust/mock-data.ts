@@ -35,17 +35,17 @@ export const mockBenefitsTrustData = {
       {
         title: "Best Product Award 2024",
         description: "Awarded for innovation and user satisfaction.",
-        imageUrl: "https://via.placeholder.com/100/FFC107/000000?text=Award+1",
+        imageUrl: "/original-39b4ace881145b6de383a834d863497f.webp",
       },
       {
         title: "Certified Partner",
         description: "Official partner with leading technology providers.",
-        imageUrl: "https://via.placeholder.com/100/28a745/ffffff?text=Partner",
+        imageUrl: "/original-4341d22a14c3595f93dfe806ae016ca1.webp",
       },
       {
         title: "100% Secure Transactions",
         description: "Your data and payments are always safe with us.",
-        imageUrl: "https://via.placeholder.com/100/007bff/ffffff?text=Secure",
+        imageUrl: "/original-6c650872ac16599ac700fd65b080c3e9.webp",
       },
     ],
     variant: "trust-badges" as const,
@@ -57,7 +57,7 @@ export const mockBenefitsTrustData = {
       {
         title: "Unmatched Reliability",
         description: "With redundant systems and continuous monitoring, we guarantee that your services will experience minimal downtime.",
-        imageUrl: "https://via.placeholder.com/600x400/17a2b8/ffffff?text=Reliability",
+        imageUrl: "/original-eeb115fedc8765420d9f730b945f4ee8.webp",
         icon: ShieldCheck,
       },
     ],

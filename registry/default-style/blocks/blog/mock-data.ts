@@ -3,7 +3,7 @@ export const mockBlogData = {
     {
       title: "The Future of Web Development",
       description: "Explore the latest trends and technologies shaping the web development landscape in 2024 and beyond.",
-      imageUrl: "https://via.placeholder.com/600x400/FF5733/ffffff?text=Web+Dev",
+      imageUrl: "/a1ee0df814ea30f4d3622c301f4baebc.webp",
       category: "Technology",
       date: "October 26, 2024",
       author: "Jane Doe",
@@ -12,7 +12,7 @@ export const mockBlogData = {
     {
       title: "Mastering React Hooks",
       description: "A comprehensive guide to understanding and effectively using React Hooks in your projects.",
-      imageUrl: "https://via.placeholder.com/600x400/33FF57/ffffff?text=React+Hooks",
+      imageUrl: "/d2a4defbf6a952b7d33139d519809179.webp",
       category: "Programming",
       date: "October 20, 2024",
       author: "John Smith",
@@ -21,7 +21,7 @@ export const mockBlogData = {
     {
       title: "Building Scalable Microservices",
       description: "Best practices for designing and implementing microservices architectures that scale.",
-      imageUrl: "https://via.placeholder.com/600x400/3357FF/ffffff?text=Microservices",
+      imageUrl: "/d3bb8de0676c2532b41a43d453662511.webp",
       category: "Architecture",
       date: "October 15, 2024",
       author: "Alice Johnson",
@@ -30,7 +30,7 @@ export const mockBlogData = {
     {
       title: "Introduction to Serverless Computing",
       description: "Get started with serverless functions and build powerful, cost-effective applications.",
-      imageUrl: "https://via.placeholder.com/600x400/FFFF33/000000?text=Serverless",
+      imageUrl: "/96d82dcff9d85d9caf3e52fe41410cc0.webp",
       category: "Cloud",
       date: "October 10, 2024",
       author: "Bob Brown",
