@@ -36,6 +36,10 @@
         {
           "path": "registry/default-style/blocks/banner/banner.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "lib/cva.ts",
+          "type": "registry:lib"
         }
       ]
     },
@@ -508,6 +512,103 @@
         {
           "path": "registry/default-style/blocks/footer/variant-dark.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Displays a button or a component that looks like a button.",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/ui/button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/cva.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Displays a card with header, content, and footer.",
+      "files": [
+        {
+          "path": "registry/default-style/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Displays a form input field.",
+      "files": [
+        {
+          "path": "registry/default-style/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Renders an accessible label associated with controls.",
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Displays a form textarea field.",
+      "files": [
+        {
+          "path": "registry/default-style/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
+      "dependencies": [
+        "@radix-ui/react-accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Displays a badge or a component that looks like a badge.",
+      "files": [
+        {
+          "path": "registry/default-style/ui/badge.tsx",
+          "type": "registry:ui"
         }
       ]
     }
