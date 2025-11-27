@@ -8,7 +8,12 @@
       "type": "registry:component",
       "title": "Hero Section",
       "description": "A hero section for a landing page.",
-      "registryDependencies": ["button"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/hero-section/hero-section.tsx",
@@ -21,7 +26,12 @@
       "type": "registry:component",
       "title": "Banner",
       "description": "A versatile banner component with multiple variations.",
-      "registryDependencies": ["button"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/banner/banner.tsx",
@@ -34,7 +44,12 @@
       "type": "registry:component",
       "title": "Blog Section",
       "description": "A section to display blog posts in various layouts.",
-      "registryDependencies": ["card"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/blog/blog.tsx",
@@ -51,7 +66,13 @@
       "type": "registry:component",
       "title": "Product Bundles",
       "description": "A section to display product bundles with various layouts.",
-      "registryDependencies": ["button", "card"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/bundles/bundles.tsx",
@@ -68,7 +89,12 @@
       "type": "registry:component",
       "title": "Product Categories",
       "description": "A section to display product categories with various layouts.",
-      "registryDependencies": ["card"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/categories/categories.tsx",
@@ -85,7 +111,16 @@
       "type": "registry:component",
       "title": "Contact Section",
       "description": "A section with contact information and a form.",
-      "registryDependencies": ["button", "card", "input", "label", "textarea"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label",
+        "textarea"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/contact/contact.tsx",
@@ -102,7 +137,12 @@
       "type": "registry:component",
       "title": "Content Section",
       "description": "A versatile section for displaying various types of content.",
-      "registryDependencies": ["button"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/content/content.tsx",
@@ -119,7 +159,14 @@
       "type": "registry:component",
       "title": "Shopping Cart Section",
       "description": "A section to display shopping cart details in various layouts.",
-      "registryDependencies": ["button", "card", "input"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/cart/cart.tsx",
@@ -136,7 +183,12 @@
       "type": "registry:component",
       "title": "Interactive Map",
       "description": "A section displaying an interactive map with various configurations.",
-      "registryDependencies": ["card"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/map/map.tsx",
@@ -153,7 +205,13 @@
       "type": "registry:component",
       "title": "FAQ Section",
       "description": "A section to display frequently asked questions.",
-      "registryDependencies": ["accordion", "card"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "card"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/faq/faq.tsx",
@@ -170,7 +228,13 @@
       "type": "registry:component",
       "title": "Featured Section",
       "description": "A section to display featured items with various layouts.",
-      "registryDependencies": ["button", "card"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/featured/featured.tsx",
@@ -187,7 +251,13 @@
       "type": "registry:component",
       "title": "Header Section",
       "description": "A responsive header component with navigation, branding, and optional features.",
-      "registryDependencies": ["button", "input"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/header/header.tsx",
@@ -204,7 +274,12 @@
       "type": "registry:component",
       "title": "Instagram Feed",
       "description": "A section to display an Instagram-like photo grid or carousel.",
-      "registryDependencies": ["button"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/instagram/instagram.tsx",
@@ -221,7 +296,11 @@
       "type": "registry:component",
       "title": "Product Detail Section",
       "description": "A section to display detailed information about a product.",
-      "registryDependencies": ["button", "input", "label"],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/product-detail/product-detail.tsx",
@@ -238,7 +317,14 @@
       "type": "registry:component",
       "title": "Product List Section",
       "description": "A section to display a list or grid of products with various layouts.",
-      "registryDependencies": ["button", "card", "input"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/product-list/product-list.tsx",
@@ -255,7 +341,13 @@
       "type": "registry:component",
       "title": "Side Cart",
       "description": "A sliding side panel to display shopping cart contents.",
-      "registryDependencies": ["button", "input"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/side-cart/side-cart.tsx",
@@ -272,7 +364,12 @@
       "type": "registry:component",
       "title": "Sticky Top Bar",
       "description": "A top bar for announcements, promotions, or quick actions.",
-      "registryDependencies": ["button"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/sticky-top-bar/sticky-top-bar.tsx",
@@ -289,7 +386,13 @@
       "type": "registry:component",
       "title": "Subscribe Newsletter",
       "description": "A section for newsletter subscription.",
-      "registryDependencies": ["button", "input"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/subscribe-newsletter/subscribe-newsletter.tsx",
@@ -306,7 +409,12 @@
       "type": "registry:component",
       "title": "Testimonial Section",
       "description": "A section to display customer testimonials in various layouts.",
-      "registryDependencies": ["card"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/testimonial/testimonial.tsx",
@@ -323,7 +431,12 @@
       "type": "registry:component",
       "title": "Benefits & Trust Section",
       "description": "A section to display key benefits or trust signals with various layouts.",
-      "registryDependencies": ["card"],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/benefits-trust/benefits-trust.tsx",
@@ -340,7 +453,9 @@
       "type": "registry:component",
       "title": "Carousel",
       "description": "A carousel component with autoplay and navigation.",
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default-style/blocks/carousel/carousel.tsx",
@@ -349,6 +464,50 @@
         {
           "path": "registry/default-style/blocks/carousel/mock-data.ts",
           "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:component",
+      "title": "Footer",
+      "description": "A flexible footer component with multiple variants.",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/footer/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/shared.tsx",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-simple.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-multi-column.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-centered.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-company-info.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-dark.tsx",
+          "type": "registry:component"
         }
       ]
     }

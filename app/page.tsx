@@ -1,54 +1,55 @@
 "use client"
 
 import * as React from "react"
-import {Button} from "@/registry/default-style/ui/button"
-import Footer from "@/registry/default-style/blocks/footer/footer"
-import {mockFooterData} from "@/registry/default-style/blocks/footer/mock-data"
+import { Button } from "@/registry/default-style/ui/button"
+import { Footer } from "@/registry/default-style/blocks/footer"
+import { mockFooterData } from "@/registry/default-style/blocks/footer/mock-data"
+import WithLoadingWrapper from "@/components/with-loading-wrapper";
 import Wrapper from "@/components/Wrapper";
 
 // Import components and their mock data from the registry
 import HeroSection from "@/registry/default-style/blocks/hero-section/hero-section"
-import {mockHeroSectionData} from "@/registry/default-style/blocks/hero-section/mock-data"
+import { mockHeroSectionData } from "@/registry/default-style/blocks/hero-section/mock-data"
 import Banner from "@/registry/default-style/blocks/banner/banner"
-import {mockBannerData} from "@/registry/default-style/blocks/banner/mock-data"
+import { mockBannerData } from "@/registry/default-style/blocks/banner/mock-data"
 import Blog from "@/registry/default-style/blocks/blog/blog"
-import {mockBlogData} from "@/registry/default-style/blocks/blog/mock-data"
+import { mockBlogData } from "@/registry/default-style/blocks/blog/mock-data"
 import Bundles from "@/registry/default-style/blocks/bundles/bundles"
-import {mockBundlesData} from "@/registry/default-style/blocks/bundles/mock-data"
+import { mockBundlesData } from "@/registry/default-style/blocks/bundles/mock-data"
 import Categories from "@/registry/default-style/blocks/categories/categories"
-import {mockCategoriesData} from "@/registry/default-style/blocks/categories/mock-data"
+import { mockCategoriesData } from "@/registry/default-style/blocks/categories/mock-data"
 import Contact from "@/registry/default-style/blocks/contact/contact"
-import {mockContactData} from "@/registry/default-style/blocks/contact/mock-data"
+import { mockContactData } from "@/registry/default-style/blocks/contact/mock-data"
 import Content from "@/registry/default-style/blocks/content/content"
-import {mockContentData} from "@/registry/default-style/blocks/content/mock-data"
+import { mockContentData } from "@/registry/default-style/blocks/content/mock-data"
 import Cart from "@/registry/default-style/blocks/cart/cart"
-import {mockCartData} from "@/registry/default-style/blocks/cart/mock-data"
+import { mockCartData } from "@/registry/default-style/blocks/cart/mock-data"
 import MapComponent from "@/registry/default-style/blocks/map/map"
-import {mockMapData} from "@/registry/default-style/blocks/map/mock-data"
+import { mockMapData } from "@/registry/default-style/blocks/map/mock-data"
 import Faq from "@/registry/default-style/blocks/faq/faq"
-import {mockFaqData} from "@/registry/default-style/blocks/faq/mock-data"
+import { mockFaqData } from "@/registry/default-style/blocks/faq/mock-data"
 import Featured from "@/registry/default-style/blocks/featured/featured"
-import {mockFeaturedData} from "@/registry/default-style/blocks/featured/mock-data"
+import { mockFeaturedData } from "@/registry/default-style/blocks/featured/mock-data"
 import Header from "@/registry/default-style/blocks/header/header"
-import {mockHeaderData} from "@/registry/default-style/blocks/header/mock-data"
+import { mockHeaderData } from "@/registry/default-style/blocks/header/mock-data"
 import Instagram from "@/registry/default-style/blocks/instagram/instagram"
-import {mockInstagramData} from "@/registry/default-style/blocks/instagram/mock-data"
+import { mockInstagramData } from "@/registry/default-style/blocks/instagram/mock-data"
 import ProductDetail from "@/registry/default-style/blocks/product-detail/product-detail"
-import {mockProductDetailData} from "@/registry/default-style/blocks/product-detail/mock-data"
+import { mockProductDetailData } from "@/registry/default-style/blocks/product-detail/mock-data"
 import ProductList from "@/registry/default-style/blocks/product-list/product-list"
-import {mockProductListData} from "@/registry/default-style/blocks/product-list/mock-data"
+import { mockProductListData } from "@/registry/default-style/blocks/product-list/mock-data"
 import SideCart from "@/registry/default-style/blocks/side-cart/side-cart"
-import {mockSideCartData} from "@/registry/default-style/blocks/side-cart/mock-data"
+import { mockSideCartData } from "@/registry/default-style/blocks/side-cart/mock-data"
 import StickyTopBar from "@/registry/default-style/blocks/sticky-top-bar/sticky-top-bar"
-import {mockStickyTopBarData} from "@/registry/default-style/blocks/sticky-top-bar/mock-data"
+import { mockStickyTopBarData } from "@/registry/default-style/blocks/sticky-top-bar/mock-data"
 import SubscribeNewsletter from "@/registry/default-style/blocks/subscribe-newsletter/subscribe-newsletter"
-import {mockSubscribeNewsletterData} from "@/registry/default-style/blocks/subscribe-newsletter/mock-data"
+import { mockSubscribeNewsletterData } from "@/registry/default-style/blocks/subscribe-newsletter/mock-data"
 import Testimonial from "@/registry/default-style/blocks/testimonial/testimonial"
-import {mockTestimonialData} from "@/registry/default-style/blocks/testimonial/mock-data"
+import { mockTestimonialData } from "@/registry/default-style/blocks/testimonial/mock-data"
 import BenefitsTrust from "@/registry/default-style/blocks/benefits-trust/benefits-trust"
-import {mockBenefitsTrustData} from "@/registry/default-style/blocks/benefits-trust/mock-data"
+import { mockBenefitsTrustData } from "@/registry/default-style/blocks/benefits-trust/mock-data"
 import Carousel from "@/registry/default-style/blocks/carousel/carousel";
-import {carouselItems} from "@/registry/default-style/blocks/carousel/mock-data";
+import { carouselItems } from "@/registry/default-style/blocks/carousel/mock-data";
 
 
 export default function Home() {
@@ -69,15 +70,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Simple Variant</h2>
-                            <Header {...mockHeaderData.simpleHeader} navLinks={mockHeaderData.navLinks} ctaButton={mockHeaderData.ctaButton} />
+                            <WithLoadingWrapper>
+                                <Header {...mockHeaderData.simpleHeader} navLinks={mockHeaderData.navLinks} ctaButton={mockHeaderData.ctaButton} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Auth Search Variant</h2>
-                            <Header {...mockHeaderData.authSearchHeader} navLinks={mockHeaderData.navLinks} />
+                            <WithLoadingWrapper>
+                                <Header {...mockHeaderData.authSearchHeader} navLinks={mockHeaderData.navLinks} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Centered Nav Variant</h2>
-                            <Header {...mockHeaderData.centeredNavHeader} navLinks={mockHeaderData.navLinks} />
+                            <WithLoadingWrapper>
+                                <Header {...mockHeaderData.centeredNavHeader} navLinks={mockHeaderData.navLinks} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -86,35 +93,49 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Announcement Variant</h2>
-                            <StickyTopBar {...mockStickyTopBarData.announcement} />
+                            <WithLoadingWrapper>
+                                <StickyTopBar {...mockStickyTopBarData.announcement} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Promotional Variant</h2>
-                            <StickyTopBar {...mockStickyTopBarData.promotional} />
+                            <WithLoadingWrapper>
+                                <StickyTopBar {...mockStickyTopBarData.promotional} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Dismissible Timer Variant</h2>
-                            <StickyTopBar {...mockStickyTopBarData.dismissibleTimer} />
+                            <WithLoadingWrapper>
+                                <StickyTopBar {...mockStickyTopBarData.dismissibleTimer} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
                 <Wrapper title="Carousel" name="carousel">
-                    <Carousel items={carouselItems} showIndicators={false} />
+                    <WithLoadingWrapper>
+                        <Carousel items={carouselItems} showIndicators={false} />
+                    </WithLoadingWrapper>
                 </Wrapper>
 
                 <Wrapper title="Hero Section" name="hero-section">
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Default Variant</h2>
-                            <HeroSection {...mockHeroSectionData.default} />
+                            <WithLoadingWrapper>
+                                <HeroSection {...mockHeroSectionData.default} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Centered Image Variant</h2>
-                            <HeroSection {...mockHeroSectionData.centeredImage} />
+                            <WithLoadingWrapper>
+                                <HeroSection {...mockHeroSectionData.centeredImage} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Hero Banner Variant</h2>
-                            <HeroSection {...mockHeroSectionData.heroBanner} />
+                            <WithLoadingWrapper>
+                                <HeroSection {...mockHeroSectionData.heroBanner} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -123,15 +144,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Default Variant</h2>
-                            <Banner {...mockBannerData.default} />
+                            <WithLoadingWrapper>
+                                <Banner {...mockBannerData.default} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Compact Variant</h2>
-                            <Banner {...mockBannerData.compact} />
+                            <WithLoadingWrapper>
+                                <Banner {...mockBannerData.compact} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Full Width Variant</h2>
-                            <Banner {...mockBannerData["full-width"]} />
+                            <WithLoadingWrapper>
+                                <Banner {...mockBannerData["full-width"]} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -140,15 +167,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Grid Layout</h2>
-                            <Blog {...mockBlogData} variant="grid" />
+                            <WithLoadingWrapper>
+                                <Blog {...mockBlogData} variant="grid" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">List Layout</h2>
-                            <Blog {...mockBlogData} variant="list" />
+                            <WithLoadingWrapper>
+                                <Blog {...mockBlogData} variant="list" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Carousel Layout</h2>
-                            <Blog {...mockBlogData} variant="carousel" />
+                            <WithLoadingWrapper>
+                                <Blog {...mockBlogData} variant="carousel" />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -157,15 +190,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">List Layout</h2>
-                            <Bundles {...mockBundlesData} variant="list" />
+                            <WithLoadingWrapper>
+                                <Bundles {...mockBundlesData} variant="list" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Grid Layout</h2>
-                            <Bundles {...mockBundlesData} variant="grid" />
+                            <WithLoadingWrapper>
+                                <Bundles {...mockBundlesData} variant="grid" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Featured Layout</h2>
-                            <Bundles {...mockBundlesData} variant="featured" />
+                            <WithLoadingWrapper>
+                                <Bundles {...mockBundlesData} variant="featured" />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -174,15 +213,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">List Layout</h2>
-                            <Categories {...mockCategoriesData} variant="list" />
+                            <WithLoadingWrapper>
+                                <Categories {...mockCategoriesData} variant="list" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Grid Layout</h2>
-                            <Categories {...mockCategoriesData} variant="grid" />
+                            <WithLoadingWrapper>
+                                <Categories {...mockCategoriesData} variant="grid" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Featured Layout</h2>
-                            <Categories {...mockCategoriesData} variant="featured" />
+                            <WithLoadingWrapper>
+                                <Categories {...mockCategoriesData} variant="featured" />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -191,15 +236,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Basic Form</h2>
-                            <Contact {...mockContactData} variant="basic-form" />
+                            <WithLoadingWrapper>
+                                <Contact {...mockContactData} variant="basic-form" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Form with Info</h2>
-                            <Contact {...mockContactData} variant="form-with-info" contactInfo={mockContactData.contactInfo} />
+                            <WithLoadingWrapper>
+                                <Contact {...mockContactData} variant="form-with-info" contactInfo={mockContactData.contactInfo} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Form with Map</h2>
-                            <Contact {...mockContactData} variant="form-with-map" contactInfo={mockContactData.contactInfo} />
+                            <WithLoadingWrapper>
+                                <Contact {...mockContactData} variant="form-with-map" contactInfo={mockContactData.contactInfo} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -208,15 +259,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Text Only</h2>
-                            <Content {...mockContentData.textOnly} />
+                            <WithLoadingWrapper>
+                                <Content {...mockContentData.textOnly} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Text with Image</h2>
-                            <Content {...mockContentData.textWithImage} />
+                            <WithLoadingWrapper>
+                                <Content {...mockContentData.textWithImage} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Multi Column</h2>
-                            <Content {...mockContentData.multiColumn} />
+                            <WithLoadingWrapper>
+                                <Content {...mockContentData.multiColumn} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -225,15 +282,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Full View</h2>
-                            <Cart {...mockCartData.fullCart} />
+                            <WithLoadingWrapper>
+                                <Cart {...mockCartData.fullCart} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Summary View</h2>
-                            <Cart {...mockCartData.summaryCart} />
+                            <WithLoadingWrapper>
+                                <Cart {...mockCartData.summaryCart} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Empty View</h2>
-                            <Cart {...mockCartData.emptyCart} />
+                            <WithLoadingWrapper>
+                                <Cart {...mockCartData.emptyCart} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -242,15 +305,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Single Marker</h2>
-                            <MapComponent {...mockMapData.singleMarker} />
+                            <WithLoadingWrapper>
+                                <MapComponent {...mockMapData.singleMarker} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Multiple Markers</h2>
-                            <MapComponent {...mockMapData.multipleMarkers} />
+                            <WithLoadingWrapper>
+                                <MapComponent {...mockMapData.multipleMarkers} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Route Area</h2>
-                            <MapComponent {...mockMapData.routeArea} />
+                            <WithLoadingWrapper>
+                                <MapComponent {...mockMapData.routeArea} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -259,15 +328,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">List Faq</h2>
-                            <Faq {...mockFaqData.listFaq} />
+                            <WithLoadingWrapper>
+                                <Faq {...mockFaqData.listFaq} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Accordion Faq</h2>
-                            <Faq {...mockFaqData.accordionFaq} />
+                            <WithLoadingWrapper>
+                                <Faq {...mockFaqData.accordionFaq} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Categorized Faq</h2>
-                            <Faq {...mockFaqData.categorizedFaq} />
+                            <WithLoadingWrapper>
+                                <Faq {...mockFaqData.categorizedFaq} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -276,15 +351,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Single Featured</h2>
-                            <Featured {...mockFeaturedData.singleFeatured} />
+                            <WithLoadingWrapper>
+                                <Featured {...mockFeaturedData.singleFeatured} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Grid Featured</h2>
-                            <Featured {...mockFeaturedData.gridFeatured} />
+                            <WithLoadingWrapper>
+                                <Featured {...mockFeaturedData.gridFeatured} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Carousel Featured</h2>
-                            <Featured {...mockFeaturedData.carouselFeatured} />
+                            <WithLoadingWrapper>
+                                <Featured {...mockFeaturedData.carouselFeatured} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -293,15 +374,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Simple Grid</h2>
-                            <Instagram {...mockInstagramData} variant="grid-simple" />
+                            <WithLoadingWrapper>
+                                <Instagram {...mockInstagramData} variant="grid-simple" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Grid with Overlay</h2>
-                            <Instagram {...mockInstagramData} variant="grid-overlay" />
+                            <WithLoadingWrapper>
+                                <Instagram {...mockInstagramData} variant="grid-overlay" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Carousel</h2>
-                            <Instagram {...mockInstagramData} variant="carousel" />
+                            <WithLoadingWrapper>
+                                <Instagram {...mockInstagramData} variant="carousel" />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -310,15 +397,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Standard</h2>
-                            <ProductDetail {...mockProductDetailData.standardProduct} />
+                            <WithLoadingWrapper>
+                                <ProductDetail {...mockProductDetailData.standardProduct} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Gallery Focused</h2>
-                            <ProductDetail {...mockProductDetailData.galleryProduct} />
+                            <WithLoadingWrapper>
+                                <ProductDetail {...mockProductDetailData.galleryProduct} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">With Reviews</h2>
-                            <ProductDetail {...mockProductDetailData.reviewsProduct} />
+                            <WithLoadingWrapper>
+                                <ProductDetail {...mockProductDetailData.reviewsProduct} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -327,15 +420,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Simple Grid</h2>
-                            <ProductList {...mockProductListData} variant="grid-simple" />
+                            <WithLoadingWrapper>
+                                <ProductList {...mockProductListData} variant="grid-simple" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Filterable List</h2>
-                            <ProductList {...mockProductListData} variant="filterable-list" />
+                            <WithLoadingWrapper>
+                                <ProductList {...mockProductListData} variant="filterable-list" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Featured Grid</h2>
-                            <ProductList {...mockProductListData} variant="featured-grid" />
+                            <WithLoadingWrapper>
+                                <ProductList {...mockProductListData} variant="featured-grid" />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -343,36 +442,44 @@ export default function Home() {
                 <Wrapper title="Side Cart" name="side-cart" className="min-h-[450px]">
                     <div className="flex flex-col gap-8">
                         <div className="flex items-center justify-center min-h-[400px] relative">
-                            <Button onClick={() => setIsSideCartOpen(true)}>Open Side Cart</Button>
-                            <SideCart
-                                {...mockSideCartData.detailedCart}
-                                isOpen={isSideCartOpen}
-                                onClose={() => setIsSideCartOpen(false)}
-                            />
+                            <WithLoadingWrapper>
+                                <Button onClick={() => setIsSideCartOpen(true)}>Open Side Cart</Button>
+                                <SideCart
+                                    {...mockSideCartData.detailedCart}
+                                    isOpen={isSideCartOpen}
+                                    onClose={() => setIsSideCartOpen(false)}
+                                />
+                            </WithLoadingWrapper>
                         </div>
                         <div className="flex items-center justify-center min-h-[400px] relative">
-                            <Button onClick={() => setIsSideCartOpen(true)}>Open Simple Cart</Button>
-                            <SideCart
-                                {...mockSideCartData.simpleCart}
-                                isOpen={isSideCartOpen}
-                                onClose={() => setIsSideCartOpen(false)}
-                            />
+                            <WithLoadingWrapper>
+                                <Button onClick={() => setIsSideCartOpen(true)}>Open Simple Cart</Button>
+                                <SideCart
+                                    {...mockSideCartData.simpleCart}
+                                    isOpen={isSideCartOpen}
+                                    onClose={() => setIsSideCartOpen(false)}
+                                />
+                            </WithLoadingWrapper>
                         </div>
                         <div className="flex items-center justify-center min-h-[400px] relative">
-                            <Button onClick={() => setIsSideCartOpen(true)}>Open Checkout Cart</Button>
-                            <SideCart
-                                {...mockSideCartData.checkoutCart}
-                                isOpen={isSideCartOpen}
-                                onClose={() => setIsSideCartOpen(false)}
-                            />
+                            <WithLoadingWrapper>
+                                <Button onClick={() => setIsSideCartOpen(true)}>Open Checkout Cart</Button>
+                                <SideCart
+                                    {...mockSideCartData.checkoutCart}
+                                    isOpen={isSideCartOpen}
+                                    onClose={() => setIsSideCartOpen(false)}
+                                />
+                            </WithLoadingWrapper>
                         </div>
                         <div className="flex items-center justify-center min-h-[400px] relative">
-                            <Button onClick={() => setIsSideCartOpen(true)}>Open Empty Cart</Button>
-                            <SideCart
-                                {...mockSideCartData.emptyCart}
-                                isOpen={isSideCartOpen}
-                                onClose={() => setIsSideCartOpen(false)}
-                            />
+                            <WithLoadingWrapper>
+                                <Button onClick={() => setIsSideCartOpen(true)}>Open Empty Cart</Button>
+                                <SideCart
+                                    {...mockSideCartData.emptyCart}
+                                    isOpen={isSideCartOpen}
+                                    onClose={() => setIsSideCartOpen(false)}
+                                />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -381,15 +488,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Simple Inline</h2>
-                            <SubscribeNewsletter {...mockSubscribeNewsletterData.simpleInline} />
+                            <WithLoadingWrapper>
+                                <SubscribeNewsletter {...mockSubscribeNewsletterData.simpleInline} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Prominent Section</h2>
-                            <SubscribeNewsletter {...mockSubscribeNewsletterData.prominentSection} />
+                            <WithLoadingWrapper>
+                                <SubscribeNewsletter {...mockSubscribeNewsletterData.prominentSection} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Minimalist Icon</h2>
-                            <SubscribeNewsletter {...mockSubscribeNewsletterData.minimalistIcon} />
+                            <WithLoadingWrapper>
+                                <SubscribeNewsletter {...mockSubscribeNewsletterData.minimalistIcon} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -398,15 +511,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Single Testimonial</h2>
-                            <Testimonial {...mockTestimonialData} variant="single" testimonials={mockTestimonialData.testimonials.slice(0, 1)} />
+                            <WithLoadingWrapper>
+                                <Testimonial {...mockTestimonialData} variant="single" testimonials={mockTestimonialData.testimonials.slice(0, 1)} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Grid Testimonials</h2>
-                            <Testimonial {...mockTestimonialData} variant="grid" />
+                            <WithLoadingWrapper>
+                                <Testimonial {...mockTestimonialData} variant="grid" />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Carousel Testimonials</h2>
-                            <Testimonial {...mockTestimonialData} variant="carousel" />
+                            <WithLoadingWrapper>
+                                <Testimonial {...mockTestimonialData} variant="carousel" />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -415,15 +534,21 @@ export default function Home() {
                     <div className="flex flex-col gap-8">
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Icon List</h2>
-                            <BenefitsTrust {...mockBenefitsTrustData.iconList} />
+                            <WithLoadingWrapper>
+                                <BenefitsTrust {...mockBenefitsTrustData.iconList} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Trust Badges</h2>
-                            <BenefitsTrust {...mockBenefitsTrustData.trustBadges} />
+                            <WithLoadingWrapper>
+                                <BenefitsTrust {...mockBenefitsTrustData.trustBadges} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold mb-4">Detailed Benefit</h2>
-                            <BenefitsTrust {...mockBenefitsTrustData.detailedBenefit} />
+                            <WithLoadingWrapper>
+                                <BenefitsTrust {...mockBenefitsTrustData.detailedBenefit} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>
@@ -431,16 +556,34 @@ export default function Home() {
                 <Wrapper title="Footer" name="footer">
                     <div className="flex flex-col gap-8">
                         <div>
-                            <h2 className="text-xl font-semibold mb-4">Simple Footer</h2>
-                            <Footer {...mockFooterData.simpleFooter} navLinks={mockFooterData.simpleFooter.navLinks} />
+                            <h2 className="text-xl font-semibold mb-4">Simple Variant</h2>
+                            <WithLoadingWrapper>
+                                <Footer {...mockFooterData.simple} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
-                            <h2 className="text-xl font-semibold mb-4">Multi Column Footer</h2>
-                            <Footer {...mockFooterData.multiColumnFooter} navLinks={mockFooterData.multiColumnFooter.navLinks} socialLinks={mockFooterData.multiColumnFooter.socialLinks} />
+                            <h2 className="text-xl font-semibold mb-4">Multi Column Variant</h2>
+                            <WithLoadingWrapper>
+                                <Footer {...mockFooterData.multiColumn} />
+                            </WithLoadingWrapper>
                         </div>
                         <div>
-                            <h2 className="text-xl font-semibold mb-4">Newsletter Footer</h2>
-                            <Footer {...mockFooterData.newsletterFooter} />
+                            <h2 className="text-xl font-semibold mb-4">Centered Variant</h2>
+                            <WithLoadingWrapper>
+                                <Footer {...mockFooterData.centered} />
+                            </WithLoadingWrapper>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold mb-4">Company Info Variant</h2>
+                            <WithLoadingWrapper>
+                                <Footer {...mockFooterData.companyInfo} />
+                            </WithLoadingWrapper>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold mb-4">Dark Variant</h2>
+                            <WithLoadingWrapper>
+                                <Footer {...mockFooterData.dark} />
+                            </WithLoadingWrapper>
                         </div>
                     </div>
                 </Wrapper>

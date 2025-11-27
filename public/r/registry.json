@@ -3,12 +3,14 @@
   "name": "acme",
   "homepage": "https://acme.com",
   "items": [
-
     {
       "name": "hero-section",
       "type": "registry:component",
       "title": "Hero Section",
       "description": "A hero section for a landing page.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button"
       ],
@@ -24,6 +26,9 @@
       "type": "registry:component",
       "title": "Banner",
       "description": "A versatile banner component with multiple variations.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button"
       ],
@@ -39,6 +44,9 @@
       "type": "registry:component",
       "title": "Blog Section",
       "description": "A section to display blog posts in various layouts.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "card"
       ],
@@ -58,6 +66,9 @@
       "type": "registry:component",
       "title": "Product Bundles",
       "description": "A section to display product bundles with various layouts.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button",
         "card"
@@ -78,6 +89,9 @@
       "type": "registry:component",
       "title": "Product Categories",
       "description": "A section to display product categories with various layouts.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "card"
       ],
@@ -97,6 +111,9 @@
       "type": "registry:component",
       "title": "Contact Section",
       "description": "A section with contact information and a form.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button",
         "card",
@@ -120,6 +137,9 @@
       "type": "registry:component",
       "title": "Content Section",
       "description": "A versatile section for displaying various types of content.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button"
       ],
@@ -139,6 +159,9 @@
       "type": "registry:component",
       "title": "Shopping Cart Section",
       "description": "A section to display shopping cart details in various layouts.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button",
         "card",
@@ -160,6 +183,9 @@
       "type": "registry:component",
       "title": "Interactive Map",
       "description": "A section displaying an interactive map with various configurations.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "card"
       ],
@@ -179,6 +205,9 @@
       "type": "registry:component",
       "title": "FAQ Section",
       "description": "A section to display frequently asked questions.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "accordion",
         "card"
@@ -199,6 +228,9 @@
       "type": "registry:component",
       "title": "Featured Section",
       "description": "A section to display featured items with various layouts.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button",
         "card"
@@ -219,6 +251,9 @@
       "type": "registry:component",
       "title": "Header Section",
       "description": "A responsive header component with navigation, branding, and optional features.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button",
         "input"
@@ -239,6 +274,9 @@
       "type": "registry:component",
       "title": "Instagram Feed",
       "description": "A section to display an Instagram-like photo grid or carousel.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button"
       ],
@@ -279,6 +317,9 @@
       "type": "registry:component",
       "title": "Product List Section",
       "description": "A section to display a list or grid of products with various layouts.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button",
         "card",
@@ -300,6 +341,9 @@
       "type": "registry:component",
       "title": "Side Cart",
       "description": "A sliding side panel to display shopping cart contents.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button",
         "input"
@@ -320,6 +364,9 @@
       "type": "registry:component",
       "title": "Sticky Top Bar",
       "description": "A top bar for announcements, promotions, or quick actions.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button"
       ],
@@ -339,6 +386,9 @@
       "type": "registry:component",
       "title": "Subscribe Newsletter",
       "description": "A section for newsletter subscription.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "button",
         "input"
@@ -359,6 +409,9 @@
       "type": "registry:component",
       "title": "Testimonial Section",
       "description": "A section to display customer testimonials in various layouts.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "card"
       ],
@@ -378,6 +431,9 @@
       "type": "registry:component",
       "title": "Benefits & Trust Section",
       "description": "A section to display key benefits or trust signals with various layouts.",
+      "dependencies": [
+        "framer-motion"
+      ],
       "registryDependencies": [
         "card"
       ],
@@ -389,6 +445,69 @@
         {
           "path": "registry/default-style/blocks/benefits-trust/mock-data.ts",
           "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:component",
+      "title": "Carousel",
+      "description": "A carousel component with autoplay and navigation.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/carousel/carousel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/carousel/mock-data.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:component",
+      "title": "Footer",
+      "description": "A flexible footer component with multiple variants.",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/default-style/blocks/footer/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/shared.tsx",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-simple.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-multi-column.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-centered.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-company-info.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default-style/blocks/footer/variant-dark.tsx",
+          "type": "registry:component"
         }
       ]
     }
