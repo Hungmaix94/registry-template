@@ -1,3 +1,5 @@
+'use client'
+
 import {motion} from "framer-motion"
 import {Button} from "@/registry/default-style/ui/button"
 import {Card, CardContent, CardHeader, CardTitle} from "@/registry/default-style/ui/card"

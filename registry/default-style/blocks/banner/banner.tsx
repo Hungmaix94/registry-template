@@ -1,10 +1,12 @@
+'use client'
+
 import Image from "next/image"
 import Link from "next/link"
-import {cva, type VariantProps} from "@/lib/cva"
-import {motion} from "framer-motion" // Import motion
+import { cva, type VariantProps } from "@/lib/cva"
+import { motion } from "framer-motion" // Import motion
 
-import {cn} from "@/lib/utils"
-import {buttonVariants} from "@/registry/default-style/ui/button"
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/registry/default-style/ui/button"
 
 const bannerVariants = cva(
     "w-full flex items-center justify-between p-4 rounded-lg",
@@ -32,17 +34,17 @@ interface BannerProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps
 }
 
 export default function Banner({
-                                   title,
-                                   description,
-                                   imageUrl,
-                                   imageAlt = "Banner image",
-                                   cta,
-                                   variant,
-                                   className,
-                                   ...props
-                               }: BannerProps) {
+    title,
+    description,
+    imageUrl,
+    imageAlt = "Banner image",
+    cta,
+    variant,
+    className,
+    ...props
+}: BannerProps) {
     const containerVariants = {
-        hidden: {opacity: 0, y: 20},
+        hidden: { opacity: 0, y: 20 },
         visible: {
             opacity: 1,
             y: 0,
@@ -55,21 +57,21 @@ export default function Banner({
     };
 
     const itemVariants = {
-        hidden: {opacity: 0, y: 20},
-        visible: {opacity: 1, y: 0},
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
     };
 
     return (
         // @ts-ignore
         <motion.div
-            className={cn(bannerVariants({variant}), className)}
+            className={cn(bannerVariants({ variant }), className)}
             initial="hidden"
             animate="visible"
             variants={containerVariants}
             {...props}
         >
             {variant === "full-width" && imageUrl && (
-                <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}} className={'relative'}>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className={'relative'}>
                     <Image
                         src={imageUrl}
                         alt={imageAlt}
@@ -83,11 +85,11 @@ export default function Banner({
                 <motion.div className="flex flex-col gap-2 text-center md:text-left" variants={containerVariants}>
                     <motion.h2 className="text-2xl font-bold" variants={itemVariants}>{title}</motion.h2>
                     {description && <motion.p className="text-sm md:text-base max-w-prose"
-                                              variants={itemVariants}>{description}</motion.p>}
+                        variants={itemVariants}>{description}</motion.p>}
                 </motion.div>
                 {cta && (
-                    <motion.div variants={itemVariants} whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}>
-                        <Link href={cta.href} className={cn(buttonVariants({variant: "secondary"}))}>
+                    <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Link href={cta.href} className={cn(buttonVariants({ variant: "secondary" }))}>
                             {cta.text}
                         </Link>
                     </motion.div>

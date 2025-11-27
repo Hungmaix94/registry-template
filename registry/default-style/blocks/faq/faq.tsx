@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/registry/default-style/ui/accordion"
